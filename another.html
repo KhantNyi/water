@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | WasteBuy</title>
+    <meta name="description" content="Contact WasteBuy or request a recycling pickup." />
+
+    <style>
+      :root{
+        --bg:#0b1220; --card:#121a2b; --text:#eaf0ff; --muted:#a8b3cf;
+        --accent:#61e3a5; --accent2:#7aa7ff; --border:rgba(255,255,255,.08);
+      }
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+        background:
+          radial-gradient(800px 400px at 20% 10%, rgba(122,167,255,.20), transparent 60%),
+          radial-gradient(700px 400px at 80% 20%, rgba(97,227,165,.18), transparent 60%),
+          var(--bg);
+        color:var(--text);
+      }
+      a{color:inherit;text-decoration:none}
+      .wrap{max-width:900px;margin:0 auto;padding:24px}
+
+      header{
+        display:flex;justify-content:space-between;align-items:center;gap:16px;
+        padding:14px 16px;
+        border:1px solid var(--border);
+        border-radius:14px;
+        background:rgba(18,26,43,.75);
+        backdrop-filter:blur(10px);
+        position:sticky;top:16px;
+      }
+      .brand{display:flex;align-items:center;gap:10px}
+      .logo{
+        width:38px;height:38px;border-radius:12px;
+        background:linear-gradient(135deg,var(--accent),var(--accent2));
+        display:grid;place-items:center;
+        font-weight:800;color:#08101e;
+      }
+      nav{display:flex;gap:14px;align-items:center}
+      nav a{
+        padding:10px 12px;border-radius:10px;color:var(--muted);
+      }
+      nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+      .btn{
+        padding:10px 14px;border-radius:12px;font-weight:700;
+        background:linear-gradient(135deg,var(--accent),var(--accent2));
+        color:#08101e;
+      }
+
+      main{padding:28px 0}
+      h1{margin:0 0 10px;font-size:34px}
+      p{margin:0 0 14px;color:var(--muted);line-height:1.7}
+
+      .card{
+        background:rgba(18,26,43,.72);
+        border:1px solid var(--border);
+        border-radius:16px;
+        padding:16px;
+        margin:14px 0;
+      }
+
+      form{display:grid;gap:12px}
+      label{font-size:13px;color:var(--muted)}
+      input, textarea, select{
+        width:100%;
+        padding:10px 12px;
+        border-radius:12px;
+        border:1px solid var(--border);
+        background:rgba(255,255,255,.04);
+        color:var(--text);
+        outline:none;
+      }
+      textarea{min-height:110px;resize:vertical}
+      .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+      @media (max-width:600px){.row{grid-template-columns:1fr}}
+
+      footer{
+        margin:22px 0 10px;
+        padding-top:18px;
+        border-top:1px solid var(--border);
+        font-size:13px;
+        color:var(--muted);
+        display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="logo">WB</div>
+          <div>
+            <div style="font-weight:800">WasteBuy</div>
+            <div style="font-size:12px;color:var(--muted)">Contact & pickup request</div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+          <a class="btn" href="index.html#estimate">Estimator</a>
+        </nav>
+      </header>
+
+      <main>
+        <h1>Get in touch</h1>
+        <p>
+          Have a question, or want to request a pickup without using the estimator?
+          Fill out the form below. This page is part of the prototype — submissions
+          are not sent anywhere yet.
+        </p>
+
+        <div class="card">
+          <h2 style="margin:0 0 8px;font-size:18px">Pickup / Contact Form</h2>
+
+          <form>
+            <div class="row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" placeholder="e.g., Khant Nyi" />
+              </div>
+              <div>
+                <label for="phone">Phone number</label>
+                <input id="phone" placeholder="e.g., 09x-xxx-xxxx" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@email.com" />
+              </div>
+              <div>
+                <label for="type">Request type</label>
+                <select id="type">
+                  <option>Pickup request</option>
+                  <option>Pricing question</option>
+                  <option>Partnership</option>
+                  <option>General inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="address">Pickup address / area</label>
+              <input id="address" placeholder="Street / area (Bangkok)" />
+            </div>
+
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Tell us what recyclables you have or ask your question..."></textarea>
+            </div>
+
+            <button type="button" class="btn" style="border:none;cursor:pointer;width:100%">
+              Submit request
+            </button>
+
+            <p style="font-size:12px;color:var(--muted)">
+              Demo only — no data is stored or sent.
+            </p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2 style="margin:0 0 8px;font-size:18px">Contact details</h2>
+          <p style="margin:0">
+            📍 Bangkok, Thailand<br/>
+            📧 support@wastebuy.example<br/>
+            ☎️ +66 9x xxx xxxx
+          </p>
+        </div>
+      </main>
+
+      <footer>
+        <div>© <span id="y"></span> WasteBuy</div>
+        <div>
+          <a href="index.html">Home</a> ·
+          <a href="about.html">About</a>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

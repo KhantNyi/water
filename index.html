@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WasteBuy | Recycle Smarter</title>
+    <meta name="description" content="WasteBuy helps you sell recyclables, book pickup appointments, and estimate your payout." />
+    <style>
+      :root{
+        --bg:#0b1220; --card:#121a2b; --text:#eaf0ff; --muted:#a8b3cf;
+        --accent:#61e3a5; --accent2:#7aa7ff; --border:rgba(255,255,255,.08);
+      }
+      *{box-sizing:border-box}
+      body{
+        margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+        background: radial-gradient(800px 400px at 20% 10%, rgba(122,167,255,.20), transparent 60%),
+                    radial-gradient(700px 400px at 80% 20%, rgba(97,227,165,.18), transparent 60%),
+                    var(--bg);
+        color:var(--text);
+      }
+      a{color:inherit; text-decoration:none}
+      .wrap{max-width:1050px; margin:0 auto; padding:24px}
+      header{
+        display:flex; gap:16px; align-items:center; justify-content:space-between;
+        padding:14px 16px; border:1px solid var(--border); border-radius:14px;
+        background:rgba(18,26,43,.75); backdrop-filter: blur(10px);
+        position:sticky; top:16px;
+      }
+      .brand{display:flex; align-items:center; gap:10px}
+      .logo{
+        width:38px; height:38px; border-radius:12px;
+        background:linear-gradient(135deg,var(--accent),var(--accent2));
+        display:grid; place-items:center; font-weight:800; color:#09111f;
+      }
+      nav{display:flex; gap:14px; align-items:center}
+      nav a{
+        padding:10px 12px; border-radius:10px; color:var(--muted);
+      }
+      nav a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+      .btn{
+        display:inline-block; padding:10px 14px; border-radius:12px; font-weight:700;
+        background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#08101e;
+      }
+
+      .hero{padding:46px 0 22px; display:grid; grid-template-columns: 1.15fr .85fr; gap:22px}
+      @media (max-width:900px){.hero{grid-template-columns:1fr; padding-top:24px}}
+      h1{margin:0 0 10px; font-size:42px; line-height:1.1}
+      .lead{color:var(--muted); font-size:16px; line-height:1.6; margin:0 0 18px}
+      .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 0}
+      .pill{
+        border:1px solid var(--border); background:rgba(255,255,255,.04);
+        padding:8px 10px; border-radius:999px; color:var(--muted); font-size:13px;
+      }
+
+      .card{
+        background:rgba(18,26,43,.72);
+        border:1px solid var(--border);
+        border-radius:16px;
+        padding:16px;
+      }
+      .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:14px 0 24px}
+      @media (max-width:900px){.grid{grid-template-columns:1fr}}
+      .card h3{margin:0 0 8px; font-size:16px}
+      .card p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
+
+      form{display:grid; gap:10px}
+      label{font-size:13px; color:var(--muted)}
+      input, select{
+        width:100%; padding:10px 12px; border-radius:12px; border:1px solid var(--border);
+        background:rgba(255,255,255,.04); color:var(--text); outline:none;
+      }
+      input::placeholder{color:rgba(168,179,207,.65)}
+      .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+      @media (max-width:520px){.row{grid-template-columns:1fr}}
+      .small{font-size:12px; color:var(--muted); margin-top:8px}
+      footer{
+        margin:22px 0 10px; padding-top:18px; border-top:1px solid var(--border);
+        color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="logo">WB</div>
+          <div>
+            <div style="font-weight:800; letter-spacing:.2px">WasteBuy</div>
+            <div style="font-size:12px; color:var(--muted)">Sell recyclables • Book pickup • Get paid</div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="about.html">About</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#estimate">Estimate</a>
+          <a class="btn" href="#estimate">Book Pickup</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1>Recycle smarter. Get paid faster.</h1>
+          <p class="lead">
+            WasteBuy is a simple platform where you can <b>sell recyclable waste</b> (plastic, paper, metal),
+            <b>schedule a pickup</b>, and <b>estimate your payout</b> before you confirm.
+          </p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn" href="#estimate">Try payout estimator</a>
+            <a href="about.html" style="padding:10px 14px; border-radius:12px; border:1px solid var(--border); color:var(--text)">
+              Learn how it works →
+            </a>
+          </div>
+
+          <div class="pillrow">
+            <div class="pill">Bangkok-ready flow</div>
+            <div class="pill">Instant price estimate</div>
+            <div class="pill">Appointment scheduling</div>
+            <div class="pill">Transparent weights & rates</div>
+          </div>
+        </div>
+
+        <div class="card" id="estimate">
+          <h3 style="margin:0 0 10px">Quick Payout Estimator</h3>
+          <p style="margin:0 0 12px; color:var(--muted); font-size:14px">
+            Enter your type + weight. This is a demo UI (no backend yet).
+          </p>
+
+          <form>
+            <div class="row">
+              <div>
+                <label for="type">Waste type</label>
+                <select id="type" name="type">
+                  <option>Plastic (PET bottles)</option>
+                  <option>Paper (mixed)</option>
+                  <option>Aluminum cans</option>
+                  <option>Glass</option>
+                </select>
+              </div>
+              <div>
+                <label for="weight">Estimated weight (kg)</label>
+                <input id="weight" name="weight" type="number" min="0" step="0.1" placeholder="e.g., 6.5" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="pickup">Pickup date</label>
+                <input id="pickup" name="pickup" type="date" />
+              </div>
+              <div>
+                <label for="time">Pickup time</label>
+                <select id="time" name="time">
+                  <option>09:00 - 11:00</option>
+                  <option>11:00 - 13:00</option>
+                  <option>13:00 - 15:00</option>
+                  <option>15:00 - 17:00</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="location">Pickup location (area)</label>
+              <input id="location" name="location" placeholder="e.g., Bang Na, Huai Khwang, Lat Phrao" />
+            </div>
+
+            <button class="btn" type="button" style="border:none; cursor:pointer; width:100%">
+              Estimate & Continue
+            </button>
+
+            <div class="small">
+              Example rates (demo): Plastic ฿8/kg • Paper ฿3/kg • Aluminum ฿35/kg • Glass ฿1/kg
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h3>1) List your recyclables</h3>
+          <p>Choose waste type, add estimated weight, and see a rough payout instantly.</p>
+        </div>
+        <div class="card">
+          <h3>2) Book a pickup</h3>
+          <p>Select a date/time window. We assign a nearby driver/collector.</p>
+        </div>
+        <div class="card">
+          <h3>3) Verify & get paid</h3>
+          <p>Collector weighs on arrival, confirms rate, and you get paid via cash/transfer.</p>
+        </div>
+      </section>
+
+      <section class="card" id="pricing">
+        <h3 style="margin:0 0 10px">Transparent pricing</h3>
+        <p style="margin:0; color:var(--muted); line-height:1.6">
+          Prices vary by market rate, cleanliness, and sorting quality.
+          WasteBuy shows an estimate first, then confirms the final payout after weighing.
+          For a student demo, you can keep rates fixed and show the “final weigh-in” step as a confirmation screen.
+        </p>
+      </section>
+
+      <footer>
+        <div>© <span id="y"></span> WasteBuy • Prototype UI</div>
+        <div>Contact: support@wastebuy.example • Bangkok, Thailand</div>
+      </footer>
+    </div>
+
+    <script>
+      // tiny detail so the footer year updates automatically
+      document.getElementById("y").textContent = new Date().getFullYear();
+
+      // optional: prefill date with today
+      const d = new Date();
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      const dateInput = document.getElementById("pickup");
+      if (dateInput) dateInput.value = `${yyyy}-${mm}-${dd}`;
+    </script>
+  </body>
+</html>
